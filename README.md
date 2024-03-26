@@ -25,3 +25,31 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## To start the project  
+
+### FireBase RealTime DatBase
+---
+Account : soufiene.ouertani@gmail.com
+Database : ng-complete-guide
+url : https://ng-complete-guide-e9292-default-rtdb.europe-west1.firebasedatabase.app/
+
+### troubleshooting
+
+---
+
+All the course code will only work if you are NOT using "strict mode" see the "First App" lecture in this module. Strict mode forces you to write more verbose code in some places (especially when it comes to class properties). If you enabled it by accident, you can also disable it by setting strict: false in your tsconfig.json file.
+
+---
+
+Due to dependency version mismatches, running the attachments might fail though - in that case, you can try the following:
+
+1) Create a new project via ng new my-project --strict false (the --strict false part is important!)
+
+2) Copy the content of the ZIP attachment src/app folder into the newly created project src/app folder.
+
+3) Run your project (my-project) via ng serve
+
+If you try to directly run my ZIP attachments, you must run npm install first.
+
+If you're getting errors when running npm install, you can often solve them by running npm install --legacy-peer-deps instead of npm install
