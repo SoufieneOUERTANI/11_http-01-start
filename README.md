@@ -65,4 +65,5 @@ If you're getting errors when running npm install, you can often solve them by r
     .subscribe(responseData => console.log(responseData))
     ;
 
+## 260. GETting Data : HttpClientModule, HttpClient, get, subscribe
 
