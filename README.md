@@ -97,3 +97,5 @@ If you're getting errors when running npm install, you can often solve them by r
         <p>{{post.content}}</p>
       </li>
     </ul>
+
+## 264. Showing a Loading Indicator
