@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs';
+import { Post } from './post.model';
 
 @Component({
   selector: 'app-root',
@@ -16,10 +17,10 @@ export class AppComponent implements OnInit {
     this.fetchPosts();
   }
 
-  onCreatePost(postData: { title: string; content: string }) {
+  onCreatePost(postData: Post) {
     // Send Http request
     console.log(postData);
-    this.http.post('https://ng-complete-guide-e9292-default-rtdb.europe-west1.firebasedatabase.app/posts.json', postData)
+    this.http.post<{name : string}>('https://ng-complete-guide-e9292-default-rtdb.europe-west1.firebasedatabase.app/posts.json', postData)
     // The post request is sent only when you subscribe
     .subscribe(responseData => console.log(responseData))
     ;
@@ -33,9 +34,11 @@ export class AppComponent implements OnInit {
   }
 
   fetchPosts(){
-    this.http.get('https://ng-complete-guide-e9292-default-rtdb.europe-west1.firebasedatabase.app/posts.json')
-    .pipe(map(responseData => {
-      const postsArray = [];
+    this.http.get<{[key : string] : Post}>('https://ng-complete-guide-e9292-default-rtdb.europe-west1.firebasedatabase.app/posts.json')
+    .pipe(map((responseData
+      //  : {[key : string] : Post} 
+       ) => {
+      const postsArray : Post[]= [];
       for(const key in responseData){
         if(responseData.hasOwnProperty(key)){
           postsArray.push(

@@ -81,3 +81,4 @@ If you're getting errors when running npm install, you can often solve them by r
       return postsArray;
     }))
 
+## 262. Using Types with the HttpClient
