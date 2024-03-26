@@ -53,3 +53,16 @@ Due to dependency version mismatches, running the attachments might fail though 
 If you try to directly run my ZIP attachments, you must run npm install first.
 
 If you're getting errors when running npm install, you can often solve them by running npm install --legacy-peer-deps instead of npm install
+
+## 259. Sending a POST Request : HttpClientModule, HttpClient, post, subscribe
+
+    imports: [BrowserModule, FormsModule, HttpClientModule],
+
+    constructor(private http : HttpClient) {}
+
+    this.http.post('https://ng-complete-guide-e9292-default-rtdb.europe-west1.firebasedatabase.app/posts.json', postData)
+    // The post request is sent only when you subscribe
+    .subscribe(responseData => console.log(responseData))
+    ;
+
+
