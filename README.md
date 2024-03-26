@@ -67,3 +67,17 @@ If you're getting errors when running npm install, you can often solve them by r
 
 ## 260. GETting Data : HttpClientModule, HttpClient, get, subscribe
 
+## 261. Using RxJS Operators to Transform Response Data :
+
+    .pipe(map(responseData => {
+      const postsArray = [];
+      for(const key in responseData){
+        if(responseData.hasOwnProperty(key)){
+          postsArray.push(
+            {...responseData[key], id:key}  
+          )
+        }
+      }
+      return postsArray;
+    }))
+
