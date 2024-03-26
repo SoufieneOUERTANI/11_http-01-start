@@ -82,3 +82,18 @@ If you're getting errors when running npm install, you can often solve them by r
     }))
 
 ## 262. Using Types with the HttpClient
+
+## 263. Outputting Posts :
+
+    loadedPosts : Post[] = [];
+
+    .subscribe(
+      (posts) => this.loadedPosts = posts
+    );
+
+    <ul class="list-group" *ngIf="loadedPosts.length >=1">
+      <li class="list-group-item" *ngFor="let post of loadedPosts">
+        <h3>{{post.title}}</h3>
+        <p>{{post.content}}</p>
+      </li>
+    </ul>
